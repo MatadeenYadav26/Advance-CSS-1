@@ -1,0 +1,76 @@
+* {
+margin : 0;
+padding : 0;
+box-sizing: border-box;
+font-family: 'helvetica neue';
+}
+html , body{
+height : 100%;
+width : 100%;
+background-color: black;
+color: white;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* @keyframes changeBackgroundColor{
+    from{
+        background-color: white;
+        border-radius: 0%;
+        scale: 2;
+        transform: translateX(0px);
+        /* visibility: visible; */
+    /* }
+    to{ */
+        /* background-color: rgb(132, 2, 2);
+        border-radius: 50px;
+        scale: 0.5;
+        transform: translateX(1000px); */
+        /* visibility: hidden; */
+    /* }
+}   */
+
+@property --bgColor {
+    syntax: "<color>" ;
+    initial-value: red;
+    inherits: false;
+}
+
+@keyframes animateBgColor {
+    from{
+        --bgColor: red;
+    }
+    to{
+        --bgColor: blue;
+    }
+}
+
+
+
+
+.box{
+    height: 200px;
+    width: 400px;
+    background-color: var(--bgColor);
+    /* animation: changeBackgroundColor 2s infinite forwards alternate;  forwards means animation ka last tep stays */
+
+    animation: animateBgColor 3s forwards;
+}
+
+
+/* .box{
+    border-radius: 50%;
+    height: 200px;
+    width: 400px;
+    background: conic-gradient(from 45deg, rgb(255, 255, 255),rgb(0, 0, 0),rgb(161, 0, 0));
+
+*/
+
+/*  background-color: whitesmoke;
+    box-shadow: inset 1px 1px 10px red ;x|y|spreadradius|color    inset only works in box shadow , reverses effect of shadow of orginal box shadow inside the box. */
+

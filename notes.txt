@@ -1,0 +1,52 @@
+**Discrete Properties in CSS — Summary**
+
+Discrete properties are CSS properties that **do not animate smoothly**. They **change instantly (jump)** from one value to another.
+
+**Continuous vs Discrete:**
+
+* Continuous → smooth transition (e.g., `opacity`, `width`)
+* Discrete → instant change (e.g., `display`, `visibility`)
+
+**Key Point:**
+Discrete properties have **no intermediate values**, so browsers cannot animate them.
+
+**Common Discrete Properties:**
+
+* `display`
+* `visibility`
+* `position`
+* `float`
+* `overflow`
+* `z-index` (often behaves discretely)
+
+**Example:**
+
+* `opacity: 0 → 1` ✅ smooth
+* `display: none → block` ❌ instant jump
+
+**Workaround (for animations):**
+Instead of discrete properties, use animatable ones:
+
+* `opacity`
+* `transform`
+* `visibility` (with opacity)
+
+**Example Trick:**
+
+```
+.box {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s;
+}
+
+.box.show {
+  opacity: 1;
+  visibility: visible;
+}
+```
+
+**Analogy:**
+
+* Opacity = dimmer switch (smooth)
+* Display = ON/OFF switch (instant)
